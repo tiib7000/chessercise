@@ -149,33 +149,20 @@ class Knight(Piece):
 	def __str__(self):
 		return str("Knight " + str(self.position))
 
-parser = argparse.ArgumentParser()
-parser.add_argument("-piece", help="Type of chess piece (Queen, Rook, Knight)", required=True)
-parser.add_argument("-position", help="Current position on a chess board (for example: d2)", required=True)
-parser.parse_args()
-args = parser.parse_args()
+if __name__ == '__main__':
+	parser = argparse.ArgumentParser()
+	parser.add_argument("-piece", help="Type of chess piece (Queen, Rook, Knight)", required=True)
+	parser.add_argument("-position", help="Current position on a chess board (for example: d2)", required=True)
+	parser.parse_args()
+	args = parser.parse_args()
 
-pos = Position.parse(args.position)
-#print(pos)
-
-piece = Piece.factory(args.piece, pos)
-#print(piece)
-
-#pos.north()
-#print(pos)
-
-#b = pos.validate()
-
-#print(b)
-
-for m in piece.moves:
-#	print(m)
-#	for s in m.steps:
-#		print(s)
-	positions = m.apply(piece.position)
-	if positions != None:
-		for p in positions:
-			print(p)
+	pos = Position.parse(args.position)
+	piece = Piece.factory(args.piece, pos)
+	for m in piece.moves:
+		positions = m.apply(piece.position)
+		if positions != None:
+			for p in positions:
+				print(p)
 
 
 
