@@ -1,0 +1,31 @@
+A program that accept two parameters:
+
+    Type of chess piece (Queen, Rook, Knight)
+    Current position on a chess board (for example: d2)
+
+and returns:
+
+ A list of all the potential board positions the given piece could advance to, with one move, from the given position, with the assumption there are no other pieces on the board.
+
+Example of calls:
+
+python3 chessercise.py -h
+
+python3 chessercise.py -piece=Rook -position=a1
+
+Output:
+a2
+a3
+a4
+a5
+a6
+a7
+a8
+b1
+c1
+d1
+e1
+f1
+g1
+h1
+
